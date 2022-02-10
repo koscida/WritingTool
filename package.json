@@ -24,7 +24,7 @@
     "formik": "^2.1.4",
     "jodit-react": "^1.0.42",
     "mysql": "^2.18.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "popper.js": "^1.16.1",
     "react-bootstrap-icons": "^1.0.3-alpha5",
     "sqlstring": "^2.3.2",
