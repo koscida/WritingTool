@@ -20,7 +20,7 @@
     "draft-js-plugins-editor": "^3.0.0",
     "draft-js-static-toolbar-plugin": "^3.0.1",
     "express": "^4.17.1",
-    "express-handlebars": "^4.0.4",
+    "express-handlebars": "^5.3.1",
     "formik": "^2.1.4",
     "jodit-react": "^1.0.42",
     "mysql": "^2.18.1",
