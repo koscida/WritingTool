@@ -1,14 +1,13 @@
 import React from "react"
 
-class CharacterView extends React.Component {
+class SignOut extends React.Component {
 	
 	render() {
 		return (
 			<div>
 				<div className="row">
 					<div>
-						<h1>Character Name</h1>
-						<h2>Affilitation</h2>
+						<h1>SignOut</h1>
 					</div>
 				</div>
 			</div>
@@ -16,4 +15,4 @@ class CharacterView extends React.Component {
 	}
 }
 
-export default CharacterView;
+export default SignOut;

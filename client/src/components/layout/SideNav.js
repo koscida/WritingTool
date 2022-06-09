@@ -1,4 +1,5 @@
 import React from "react"
+import { NavLink } from 'react-router-dom'
 
 class SideNav extends React.Component {
 	render() {
@@ -6,88 +7,89 @@ class SideNav extends React.Component {
 			[
 				{ 
 					name: "Characters",
-					link: "/character",
+					link: "character",
 					fa: 'fa-solid fa-person-dress',
 				},{ 
 					name: "Organizations",
-					link: "/",
+					link: "organization",
 					fa: 'fa-solid fa-people-group',
 				},{ 
 					name: "Religions",
-					link: "/",
+					link: "religion",
 					fa: 'fa-solid fa-place-of-worship',
 				},{ 
 					name: "Cultures",
-					link: "/",
+					link: "culture",
 					fa: 'fa-solid fa-people-line',
 				},{ 
 					name: "Objects",
-					link: "/",
+					link: "object",
 					fa: 'fa-solid fa-shapes',
 				},
 			],[
 				{ 
 					name: "Languages",
-					link: "/",
+					link: "language",
 					fa: 'fa-solid fa-language',
 				},{ 
 					name: "Magic Systems",
-					link: "/",
+					link: "magic",
 					fa: 'fa-solid fa-star-half-stroke',
 				},{ 
 					name: "Locations",
-					link: "/locations",
+					link: "location",
 					fa: 'fa-solid fa-location-dot',
 				},{ 
 					name: "Maps",
-					link: "/",
+					link: "map",
 					fa: 'fa-solid fa-map',
 				},{ 
 					name: "Timelines",
-					link: "/",
+					link: "timeline",
 					fa: 'fa-solid fa-timeline',
 				},
 			],[
 				{ 
 					name: "Character Arcs",
-					link: "/",
+					link: "arc",
 					fa: 'fa-solid fa-bars-staggered',
 				},{ 
 					name: "Relationships",
-					link: "/",
+					link: "relationship",
 					fa: 'fa-solid fa-handshake-simple',
 				},{ 
 					name: "Themes",
-					link: "/",
+					link: "theme",
 					fa: 'fa-solid fa-bolt-lightning',
 				},{ 
 					name: "Plots",
-					link: "/",
+					link: "plot",
 					fa: 'fa-solid fa-lightbulb',
 				},{ 
 					name: "Manuscript",
-					link: "/manuscript",
+					link: "manuscript",
 					fa: 'fa-solid fa-feather',
 				},
 			],[
 				{ 
 					name: "Configuration",
-					link: "/",
+					link: "configuration",
 					fa: 'fa-solid fa-gear',
 				},
+			],[
 				{ 
 					name: "Projects",
 					fa: 'fa-solid fa-folder',
 					links : [
 						{
 							name: 'New project...',
-							link: "/",
+							link: "/new-project",
 						},{
 							name: 'Project 2',
-							link: "/",
+							link: "/project/2",
 						},{
 							name: 'Project 3',
-							link: "/",
+							link: "/project/1",
 						},
 					],
 				},
@@ -97,13 +99,13 @@ class SideNav extends React.Component {
 					links: [
 						{
 							name: 'Profile',
-							link: "/",
+							link: "/profile/profile",
 						},{
 							name: 'Settings',
-							link: "/",
+							link: "/profile/settings",
 						},{
 							name: 'Sign out',
-							link: "/",
+							link: "/profile/sign-out",
 						}
 					],
 				},
@@ -123,14 +125,15 @@ class SideNav extends React.Component {
 						<ul className={"nav nav-pills flex-column border-bottom py-3"} key={i}>
 							{section.map( (navItem, j) => {
 								const {name, fa} = navItem
-								const classes = 'nav-item' + (navItem.links ? " dropdown" : '')
+								const liClasses = 'nav-item' + (navItem.links ? " dropdown" : '')
+								const navLinkClasses = 'nav-link link-dark' + (navItem.links ? " d-flex align-items-center text-decoration-none dropdown-toggle" : '')
 								return (
-								<li className={classes} key={j}>
+								<li className={liClasses} key={j}>
 									{navItem.link && 
-										<a href={navItem.link} className="nav-link link-dark">
+										<NavLink to={navItem.link} activeclassname="active" className='nav-link link-dark'>
 											<i className={'me-3 text-center ' + fa} style={{width: "25px", maxHeight: "25px"}}></i>
 											{name}
-										</a>
+										</NavLink>
 									}
 									{navItem.links && <>
 										<a href="#" className="nav-link link-dark d-flex align-items-center text-decoration-none dropdown-toggle" id={"dropdownUser"+j} data-bs-toggle="dropdown" aria-expanded="false">
@@ -139,7 +142,11 @@ class SideNav extends React.Component {
 										</a>
 										<ul className="dropdown-menu text-small shadow" aria-labelledby={"dropdownUser"+j}>
 											{navItem.links.map( ({name, link}, k) => (
-												<li key={k}><a className="dropdown-item" href={link}>{name}</a></li>
+												<li key={k}>
+													<NavLink to={link} activeclassname="active" className='dropdown-item'>
+														{name}
+													</NavLink>
+												</li>
 											))}
 										</ul>
 									</>}

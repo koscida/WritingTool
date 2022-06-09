@@ -1,6 +1,5 @@
 import React from "react"
-
-import Card from '../common/Card'
+import Card from '../../common/Card'
 
 class Home extends React.Component {
 	
@@ -9,9 +8,11 @@ class Home extends React.Component {
 			<div>
 				<div className="row">
 					<div>
-						<h1>Main Home</h1>
+						<h1>Language Home</h1>
 					</div>
-					{["Projects"].map( (header, i) => (
+				</div>
+				<div className="row">
+					{["Favorites","Recently Edited","Most Edited"].map( (header, i) => (
 						<div className="row mx-0 mb-2" key={i}>
 							<div className="col-12">
 								<h1>{header}</h1>
@@ -22,7 +23,7 @@ class Home extends React.Component {
 										<Card card={{
 											title: "Card Title",
 											text: ['Some quick example text to build on the card title and make up the bulk of the cards content.'],
-											links: [{link: '/project/1', text:"Link"}]
+											links: [{link: '1', text:"Link"}]
 										}}/>
 									</div>
 								))}

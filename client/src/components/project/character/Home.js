@@ -1,12 +1,29 @@
 import React from "react"
-import { Outlet } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
-import Card from '../common/Card'
+import Card from '../../common/Card'
 
-class CharacterHome extends React.Component {
+class Home extends React.Component {
 	render() {
 		return (
 			<>
+				<div className="row">
+					<nav aria-label="breadcrumb">
+						<ol className="breadcrumb">
+							<li className="breadcrumb-item">
+								<NavLink to='/'>
+									Home
+								</NavLink>
+							</li>
+							<li className="breadcrumb-item">
+								<NavLink to='../../'>
+									Project 1
+								</NavLink>
+							</li>
+							<li className="breadcrumb-item active" aria-current="page">Characters</li>
+						</ol>
+					</nav>
+				</div>
 				{["Favorites","Recently Edited","Most Edited"].map( (header, i) => (
 					<div className="row mx-0 mb-2" key={i}>
 						<div className="col-12">
@@ -18,7 +35,7 @@ class CharacterHome extends React.Component {
 									<Card card={{
 										title: "Card Title",
 										text: ['Some quick example text to build on the card title and make up the bulk of the cards content.'],
-										links: [{link: '/character/1', text:"Link"}]
+										links: [{link: '1', text:"Link"}]
 									}}/>
 								</div>
 							))}
@@ -50,7 +67,7 @@ class CharacterHome extends React.Component {
 								<Card card={{
 									title: "Card Title",
 									text: ['Some quick example text to build on the card title and make up the bulk of the cards content.'],
-									links: [{link: '/character/1', text:"Link"}]
+									links: [{link: '1', text:"Link"}]
 								}}/>
 							</div>
 						))}
@@ -61,4 +78,4 @@ class CharacterHome extends React.Component {
 	}
 }
 
-export default CharacterHome;
+export default Home;
