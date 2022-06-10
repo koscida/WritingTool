@@ -1,16 +1,24 @@
 import React from "react"
+import IPA from './IPA/IPA'
 
 class Phonetics extends React.Component {
 	
 	render() {
 		return (
-			<div>
+			<>
 				<div className="row">
-					<div>
-						<h1>Phonetics</h1>
+					<div className="col">
+						<IPA />
 					</div>
 				</div>
-			</div>
+				<div className="row d-grid" style={{gridTemplateColumns: 'repeat(5, 1fr)'}}>
+					<div>Naive Symbol</div>
+					<div>English Letter</div>
+					<div>Type</div>
+					<div>Sound</div>
+					<div>IPA</div>
+				</div>
+			</>
 		)
 	}
 }

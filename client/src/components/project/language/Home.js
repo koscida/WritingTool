@@ -1,11 +1,29 @@
 import React from "react"
+import { NavLink } from 'react-router-dom'
 import Card from '../../common/Card'
 
 class Home extends React.Component {
 	
 	render() {
 		return (
-			<div>
+			<>
+				<div className="row">
+					<nav aria-label="breadcrumb">
+						<ol className="breadcrumb">
+							<li className="breadcrumb-item">
+								<NavLink to='/'>
+									Home
+								</NavLink>
+							</li>
+							<li className="breadcrumb-item">
+								<NavLink to='../'>
+									Project 1
+								</NavLink>
+							</li>
+							<li className="breadcrumb-item active" aria-current="page">Languages</li>
+						</ol>
+					</nav>
+				</div>
 				<div className="row">
 					<div>
 						<h1>Language Home</h1>
@@ -31,7 +49,7 @@ class Home extends React.Component {
 						</div>
 					))}
 				</div>
-			</div>
+			</>
 		)
 	}
 }

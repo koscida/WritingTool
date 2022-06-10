@@ -25,3 +25,60 @@ main {
 .app {
 	
 }
+
+
+
+a {
+	text-decoration: none;
+	color: #0645ad;
+	background: none;
+}
+
+.btn-check:focus + .btn, .btn:focus {
+	color: var(--bs-btn-color);
+	background-color: var(--bs-btn-bg);
+	border-color: var(--bs-btn-border-color);
+	box-shadow: var(--bs-btn-shadow);
+	outline: 0;
+}
+
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: var(--bs-nav-link-color) !important;
+  background-color: var(--bs-nav-pills-link-bg);
+}
+.link-dark:focus, .link-dark:hover {
+  color: var(--bs-nav-link-color) !important;
+}
+
+
+
+.wikitable {
+	width: 100%;
+	font-size: 100%;
+	background-color: #f8f9fa;
+	color: #202122;
+	margin: 1em 0;
+	border: 1px solid #a2a9b1;
+	border-collapse: collapse;
+	text-align: center;
+}
+.wikitable > tr > th, .wikitable > * > tr > th {
+  background-color: #eaecf0;
+  text-align: center;
+}
+.wikitable > tr > th, .wikitable > * > tr > th {
+    background-color: #eaecf0;
+    text-align: center;
+}
+.wikitable > tr > th, .wikitable > tr > td, .wikitable > * > tr > th, .wikitable > * > tr > td {
+    border: 1px solid #a2a9b1;
+    padding: 0.2em 0.4em;
+}
+.wikitable > tr > td:nth-child(2n+1), .wikitable > * > tr > td:nth-child(2n+1) {
+  border-left: none;
+}
+.wikitable > tr > td:nth-child(2n+2), .wikitable > * > tr > td:nth-child(2n+2) {
+  border-right: none;
+}

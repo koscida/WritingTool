@@ -4,6 +4,7 @@ import {
 	Route,
 	Routes,
 	NavLink,
+	Navigate,
 	Outlet,
 } from 'react-router-dom'
 
@@ -21,10 +22,10 @@ const LanguageRouter = () => <>
 	<Routes>
 		<Route index element={<Home />} />
 		
-		<Route path=":id/*" element={<Language />}>
-			<Route index element={<Dictionary />} />
-			<Route path="dictionary" element={<Dictionary />} />
+		<Route path=":languageKey" element={<Language />}>
+			<Route index element={<Navigate to="phonetics" /> } />
 			<Route path="phonetics" element={<Phonetics />} />
+			<Route path="dictionary" element={<Dictionary />} />
 			<Route path="grammar" element={<Grammar />} />
 			<Route path="pragmatics" element={<Pragmatics />} />
 			<Route path="*" element={<NotFound />} />

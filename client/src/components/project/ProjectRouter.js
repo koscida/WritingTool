@@ -35,7 +35,7 @@ const ManuscriptRouter = () => <Outlet />
 const Project = () => <>
 	<main className="container-flex app">
 		<SideNav />
-		<div className="overflow-scroll w-100 row m-0">
+		<div className="overflow-scroll w-100 d-flex flex-column p-2 mx-1">
 			<Routes>
 				<Route exact path="/" element={<Home />} />
 				<Route index element={<Home />} />
@@ -69,7 +69,7 @@ const Project = () => <>
 const ProjectRouter = () => <>
 	<Routes>
 		<Route
-			path=":id/*"
+			path=":projectKey/*"
 			element={<Project />}
 		/>
 		

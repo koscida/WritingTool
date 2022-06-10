@@ -5,7 +5,7 @@ class Character extends React.Component {
 	
 	render() {
 		return (
-			<div>
+			<>
 				<div className="row">
 					<nav aria-label="breadcrumb">
 						<ol className="breadcrumb">
@@ -34,7 +34,7 @@ class Character extends React.Component {
 						<h2>Affilitation</h2>
 					</div>
 				</div>
-			</div>
+			</>
 		)
 	}
 }

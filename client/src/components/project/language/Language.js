@@ -1,28 +1,40 @@
 import React from "react"
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useParams  } from 'react-router-dom'
 
-class Language extends React.Component {
+const Language = (props) => {
+	let { languageKey } = useParams();
 	
-	render() {
-		return (
-			<div class="mb-3">
-				<div className="d-flex flex-row align-items-start">
-					<div class="m-2">
-						<select class="form-select form-select-lg" aria-label="Default select example">
-							<option selected value="1">Language 1</option>
-							<option value="1">Language 2</option>
-							<option value="2">Language 3</option>
-							<option value="3">Language 4</option>
-						</select>
-					</div>
-					
-					<div class="m-2">
+	return <>
+		<div className="row">
+			<nav aria-label="breadcrumb">
+				<ol className="breadcrumb">
+					<li className="breadcrumb-item">
+						<NavLink to='/'>
+							Home
+						</NavLink>
+					</li>
+					<li className="breadcrumb-item">
+						<NavLink to='../../'>
+							Project {languageKey}
+						</NavLink>
+					</li>
+					<li className="breadcrumb-item">
+						<NavLink to='../'>
+							Languages
+						</NavLink>
+					</li>
+					<li className="breadcrumb-item active" aria-current="page">Language {languageKey}</li>
+				</ol>
+			</nav>
+			<div className="mb-3">
+				<div className="d-flex flex-row align-items-end">
+					<div className="mb-2">
 						<ul className="nav nav-tabs">
 							<li className="nav-item">
-								<NavLink to="dictionary" activeclassname="active" className='nav-link'>Dictionary</NavLink>
+								<NavLink to="phonetics" activeclassname="active" className='nav-link'>Phonetics</NavLink>
 							</li>
 							<li className="nav-item">
-								<NavLink to="phonetics" activeclassname="active" className='nav-link'>Phonetics</NavLink>
+								<NavLink to="dictionary" activeclassname="active" className='nav-link'>Dictionary</NavLink>
 							</li>
 							<li className="nav-item">
 								<NavLink to="grammar" activeclassname="active" className='nav-link'>Grammar</NavLink>
@@ -32,12 +44,33 @@ class Language extends React.Component {
 							</li>
 						</ul>
 					</div>
-					
+					<div className="mb-2 ms-auto">
+						<div className="nav-item dropdown">
+							<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								Languages
+							</a>
+							<ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+								<li>
+									<NavLink to="../../language/1" activeclassname="active" className='dropdown-item'>Language 1</NavLink>
+								</li>
+								<li>
+									<NavLink to="../../language/2" activeclassname="active" className='dropdown-item'>Language 2</NavLink>
+								</li>
+								<li>
+									<NavLink to="../../language/3" activeclassname="active" className='dropdown-item'>Language 3</NavLink>
+								</li>
+								<li>
+									<NavLink to="../../language/4" activeclassname="active" className='dropdown-item'>Language 4</NavLink>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<Outlet />
+				
 			</div>
-		)
-	}
+		</div>
+		<Outlet />
+	</>
 }
 
 export default Language;
