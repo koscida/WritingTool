@@ -1,4 +1,4 @@
-exports.consonants = {
+const consonantsFormatted = {
 	'nasal' : {
 		labial : {
 			bilabial : {
@@ -687,6 +687,30 @@ exports.consonants = {
 		}, 
 	},
 }
+exports.consonantsFormatted = consonantsFormatted
+exports.consonants = Object.values(
+	Object.entries(consonantsFormatted).reduce( (list1, [manner, places]) => 
+		Object.entries(places).reduce( (list2, [place, subPlaces]) => 
+			Object.entries(subPlaces).reduce( (list3, [subPlace, voices]) => 
+				Object.entries(voices).reduce( (list4, [voice, {symbol, sound, file}]) => 
+					({
+						...list4, 
+						[symbol] : {
+							symbol, 
+							sound, 
+							file,
+							place,
+							subPlace, 
+							manner,
+							voice,
+							type:'consonant'
+						}
+					})
+				, {...list3})
+			,{...list2})
+		, {...list1})
+	, {})
+)
 exports.consonantsPlaces = {
 	labial: ['bilabial', 'Labiodental','linguolabial'],
 	coronal: ['dental', 'alveolar', 'postalveolar', 'retroflex'],
@@ -695,25 +719,25 @@ exports.consonantsPlaces = {
 }
 exports.consonantsManner = ['nasal', 'plosive', 'sibilant-fricative', 'non-sibilant-fricative', 'approximant', 'tap-flap', 'trill', 'lateral-fricative', 'lateral-approximant', 'lateral-tap-flap']
 
-exports.vowels = {
+const vowelsFormatted = {
 	'close': {
 		'front': {
 			unrounded: {
 				symbol: 'i',
 				sound: '',
-				file: '',
+				file: 'Close_front_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'y',
 				sound: '',
-				file: '',
+				file: 'Close_front_rounded_vowel.ogg',
 			},
 		}, 
 		'central': {
 			unrounded: {
 				symbol: 'ɨ',
 				sound: '',
-				file: '',
+				file: 'Close_central_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'ʉ',
@@ -914,6 +938,27 @@ exports.vowels = {
 		},
 	},
 }
+exports.vowelsFormatted = vowelsFormatted
+exports.vowels = Object.values(
+	Object.entries(vowelsFormatted).reduce( (vowels, [manner, places]) => 
+		Object.entries(places).reduce( (vowels2, [place, rounds]) => 
+			Object.entries(rounds).reduce( (vowels3, [round, {symbol, sound, file}]) => 
+				({
+					...vowels3, 
+					[symbol] : {
+						symbol, 
+						sound, 
+						file,
+						round,
+						place, 
+						manner,
+						type:'vowel'
+					}
+				})
+			, {...vowels2})
+		,{...vowels})
+	, {})
+)
 exports.vowelsPlaces = ['front', 'central', 'back']
 exports.vowelsManner = ['close', 'near-close', 'close-mid', 'mid', 'open-mid', 'near-open', 'open']
 

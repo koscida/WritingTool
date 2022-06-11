@@ -62,63 +62,74 @@ const blendTwoColors = (color1Hex, color2Hex) => {
 	return color3Hex;
 }
 const blendAllColors = (colors) => {
-		if(colors.length > 1) {
-			const blended = [...Array(colors.length-1)].reduce( (blend, color, i) => {
-				return [...blend, blendTwoColors(colors[i], colors[i+1])]
-			}, [])
-			return blendAllColors(blended)
-		}
-		else {
-			return colors[0]
-		}
+	// console.log(colors)
+	if(colors.length === 1) 
+		return colors[0]
+	else if(colors.length > 1) {
+		const blended = [...Array(colors.length-1)].reduce( (blend, color, i) => {
+			return [...blend, blendTwoColors(colors[i], colors[i+1])]
+		}, [])
+		return blendAllColors(blended)
 	}
+	else {
+		return colors
+	}
+}
 
 const defaultColors = ['#0080ff', '#ff00ff', '#00ff40', '#ffff00']
 
 const IPA = (props) => {
-	const [appliedMaps, setAppliedMaps] = useState({
-		consonants: Object.keys(languageMaps).reduce((m,l) => ({...m,[l]:{}}),{}),
-		vowels: Object.keys(languageMaps).reduce((m,l) => ({...m,[l]:{}}),{}),
-	})
-	// appliedMaps = {
-	// 	'consonants': {
-	// 		'english': {
-	// 			color: color,
-	// 			map: map
-	// 		}
+	// const [appliedMaps, setAppliedMaps] = useState({
+	// 	consonants: Object.keys(languageMaps).reduce((m,l) => ({...m,[l]:{}}),{}),
+	// 	vowels: Object.keys(languageMaps).reduce((m,l) => ({...m,[l]:{}}),{}),
+	// })
+	const [appliedConsonantMaps, setAppliedConsonantMaps] = useState({})
+	// appliedConsonantMaps = {
+	// 	'english' : {
+	// 		color: color,
+	// 		map: map
 	// 	}
 	// }
-	
+	const [appliedVowelsMaps, setAppliedVowelsMaps] = useState({})
 	
 	const handleApplyMap = (type, lang) => {
-		setAppliedMaps({
-			...appliedMaps, 
-			[type]: {
-				...appliedMaps[type],
-				[lang]: (Object.keys(appliedMaps[type][lang]).length > 0 
-					? {}
-					: {color: defaultColors[Object.values(appliedMaps[type]).reduce((c,m)=>c+(Object.keys(m).length>0?1:0), 0)], map: languageMaps[lang][type]}
-				)
-			}
-		})
+		const appliedMaps = (type === 'consonants') ? appliedConsonantMaps : appliedVowelsMaps
+		const setAppliedMaps = (type === 'consonants') ? setAppliedConsonantMaps : setAppliedVowelsMaps
+		
+		appliedMaps[lang]
+			? setAppliedMaps(
+				Object.entries(appliedMaps).reduce( (newMap, [newLang, newData]) => {
+					if(newLang !== lang)
+						newMap[newLang] = newData
+					return newMap
+				}, {})
+			)
+			: setAppliedMaps({
+				...appliedMaps,
+				[lang]: {
+					color: defaultColors[Object.keys(appliedMaps).length], 
+					map: languageMaps[lang][type]
+				}
+			})
 	}
 	
 	const handleColorChange = (type, lang, color) => {
+		const appliedMaps = (type === 'consonants') ? appliedConsonantMaps : appliedVowelsMaps
+		const setAppliedMaps = (type === 'consonants') ? setAppliedConsonantMaps : setAppliedVowelsMaps
+		
 		setAppliedMaps({
 			...appliedMaps, 
-			[type]: {
-				...appliedMaps[type],
-				[lang]: {
-					...appliedMaps[type][lang],
-					color
-				}
+			[lang]: {
+				...appliedMaps[lang],
+				color
 			}
 		})
 	}
 	
 	const BlendedColors = ({type}) => {
-		const active = Object.entries(appliedMaps[type]).filter( ([l, m]) => Object.keys(m).length > 0 )
-		// console.log(consonantsActive)
+		const appliedMaps = type === 'consonants' ? appliedConsonantMaps : appliedVowelsMaps
+		const active = Object.entries(appliedMaps)
+		// console.log(appliedMaps, active)
 		return (
 			active.length > 1
 				? <div className="ms-auto d-flex flex-row align-items-center">
@@ -143,14 +154,19 @@ const IPA = (props) => {
 	}
 	
 	const TableHeaderAndOptions = ({type}) => {
+		const appliedMaps = type === 'consonants' ? appliedConsonantMaps : appliedVowelsMaps
 		return <div>
 			<h2>{type}</h2>
 			<div className="d-flex flex-row align-items-center">
 				<span className="me-2">Show: </span>
-				{Object.keys(languageMaps).map(language => 
-					<div className="d-flex flex-row align-items-center" key={language}>
+				{Object.keys(languageMaps).map(language => {
+					const appliedLangMap = appliedMaps[language]
+					const className = appliedLangMap
+						? 'btn-primary' 
+						: 'btn-outline-primary'
+					return (<div className="d-flex flex-row align-items-center" key={language}>
 						<button 
-							className={"btn me-2 " + (Object.keys(appliedMaps[type][language]).length > 0 ? 'btn-primary' : 'btn-outline-primary')} 
+							className={"btn me-2 " + className} 
 							onClick={(e) => handleApplyMap(type, e.target.value)} 
 							type='submit'
 							name='map' 
@@ -158,16 +174,17 @@ const IPA = (props) => {
 							>
 							{language}
 						</button>
-						{Object.keys(appliedMaps[type][language]).length > 0 ? 
-							<input 
+						{appliedLangMap
+							? <input 
 								type="color" 
 								className="form-control form-control-color me-2" 
 								onChange={(e) => handleColorChange(type, e.target.name, e.target.value)}
 								name={language}
-								value={appliedMaps[type][language].color} 
+								value={appliedLangMap.color} 
 								/>
-						:''}
-					</div>
+							:''
+						}
+					</div>)}
 				)}
 				<BlendedColors type={type} />
 			</div>
@@ -203,20 +220,23 @@ const IPA = (props) => {
 						{Object.entries(consonantsPlaces).map(([place,subPlaces])=>
 							subPlaces.map(subPlace => 
 								['voiceless', 'voiced'].map(voice => {
-									const appearsIPA = consonants[manner] && 
-													consonants[manner][place] && 
-													consonants[manner][place][subPlace] &&
-													consonants[manner][place][subPlace][voice]
-									const text = appearsIPA ? consonants[manner][place][subPlace][voice].symbol : ''
+									let letter = consonants.filter( c => (manner === c.manner && place === c.place && subPlace === c.subPlace && voice === c.voice ) )
+									if(letter) letter = letter[0]
 									
-									const bgColor = !appearsIPA 
-										? '#eee' 
-										: blendAllColors(
-											Object.entries(appliedMaps['consonants'])
-												.filter( ([l, m]) => Object.keys(m).length > 0 && m.map.includes(text) )
-												.reduce( (c, [l, m]) => [...c,m.color], [] )
-										)
+									const text = letter 
+										? letter.symbol 
+										: ''
+									
+									const bgColor = letter 
+										? blendAllColors(Object.values(appliedConsonantMaps)
+											.reduce( (colors, {color, map}) => 
+												map.includes(text)
+													? [...colors, color]
+													: colors
+											, []))
+										: '#eee' 
 									const styles = {background: bgColor}
+									
 									return (
 										<td key={place+subPlace+manner+voice} style={styles} >
 											{text}
@@ -247,19 +267,23 @@ const IPA = (props) => {
 						<th scope="row">{manner}</th>
 						{vowelsPlaces.map(place =>
 							['unrounded', 'rounded'].map(round => {
-								const appearsIPA = vowels[manner] && 
-												vowels[manner][place] && 
-												vowels[manner][place][round]
-								const text = appearsIPA ? vowels[manner][place][round].symbol : ''
+								let letter = vowels.filter( c => (manner === c.manner && place === c.place && round === c.round ) )
+								if(letter) letter = letter[0]
 								
-								const bgColor = !appearsIPA 
-									? '#eee' 
-									: blendAllColors(
-										Object.entries(appliedMaps['vowels'])
-											.filter( ([l, m]) => Object.keys(m).length > 0 && m.map.includes(text) )
-											.reduce( (c, [l, m]) => [...c,m.color], [] )
-									)
+								const text = letter 
+										? letter.symbol 
+										: ''
+								
+								const bgColor = letter 
+									? blendAllColors(Object.values(appliedVowelsMaps)
+										.reduce( (colors, {color, map}) => 
+											map.includes(text)
+												? [...colors, color]
+												: colors
+										, []))
+									: '#eee' 
 								const styles = {background: bgColor}
+								
 								return (
 									<td key={place+manner+round} style={styles} >
 										{text}

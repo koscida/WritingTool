@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -53,7 +54,6 @@ a {
 }
 
 
-
 .wikitable {
 	width: 100%;
 	font-size: 100%;
@@ -63,6 +63,7 @@ a {
 	border: 1px solid #a2a9b1;
 	border-collapse: collapse;
 	text-align: center;
+	font-family: 'Gentium Basic', serif;
 }
 .wikitable > tr > th, .wikitable > * > tr > th {
   background-color: #eaecf0;
