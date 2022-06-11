@@ -10,19 +10,19 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'm',
 					sound: '',
-					file: '',
+					file: 'Bilabial_nasal.ogg',
 				},
 			}, labiodental : {
 				voiced: {
 					symbol: 'ɱ',
 					sound: '',
-					file: '',
+					file: 'Labiodental_nasal.ogg',
 				},
 			}, linguolabial : {
 				voiced: {
 					symbol: 'n̼',
 					sound: '',
-					file: '',
+					file: 'Linguolabial_nasal.ogg',
 				},
 			},
 		}, coronal: {
@@ -35,7 +35,7 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'n',
 					sound: '',
-					file: '',
+					file: 'Alveolar_nasal.ogg',
 				},
 			},retroflex : {
 				voiceless: {
@@ -46,7 +46,7 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'ɳ',
 					sound: '',
-					file: '',
+					file: 'Retroflex_nasal.ogg',
 				},
 			},
 		}, dorsal: {
@@ -59,7 +59,7 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'ɲ',
 					sound: '',
-					file: '',
+					file: 'Palatal_nasal.ogg',
 				},
 			}, velar : {
 				voiceless: {
@@ -70,13 +70,13 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'ŋ',
 					sound: '',
-					file: '',
+					file: 'Velar_nasal.ogg',
 				},
 			}, velar : {
 				voiced: {
 					symbol: 'ɴ',
 					sound: '',
-					file: '',
+					file: 'Uvular_nasal.ogg',
 				},
 			},
 		}, 
@@ -87,12 +87,12 @@ const consonantsFormatted = {
 				voiceless: {
 					symbol: 'p',
 					sound: '',
-					file: '',
+					file: 'Voiceless_bilabial_plosive.ogg',
 				},
 				voiced: {
 					symbol: 'b',
 					sound: '',
-					file: '',
+					file: 'Voiced_bilabial_plosive.ogg',
 				},
 			}, labiodental : {
 				voiceless: {
@@ -109,35 +109,48 @@ const consonantsFormatted = {
 				voiceless: {
 					symbol: 't̼',
 					sound: '',
-					file: '',
+					file: 'Voiceless_linguolabial_stop.ogg',
 				}, voiced: {
 					symbol: 'd̼',
 					sound: '',
-					file: '',
+					file: 'Voiced_linguolabial_stop.ogg',
 				},
 			},
 		}, coronal: {
+			dental : {
+				voiceless: {
+					symbol: 't̪',
+					sound: '',
+					file: 'Voiceless_dental_stop.ogg',
+				},
+				voiced: {
+					symbol: 'd̪',
+					sound: '',
+					file: 'Voiced_dental_stop.ogg',
+				},
+			},
 			alveolar : {
 				voiceless: {
 					symbol: 't',
 					sound: '',
-					file: '',
+					file: 'Voiceless_alveolar_plosive.ogg',
 				},
 				voiced: {
 					symbol: 'd',
 					sound: '',
-					file: '',
+					file: 'Voiced_alveolar_plosive.ogg',
 				},
-			},retroflex : {
+			},
+			retroflex : {
 				voiceless: {
 					symbol: 'ʈ',
 					sound: '',
-					file: '',
+					file: 'Voiceless_retroflex_stop.oga',
 				},
 				voiced: {
 					symbol: 'ɖ',
 					sound: '',
-					file: '',
+					file: 'Voiced_retroflex_stop.oga',
 				},
 			},
 		}, dorsal: {
@@ -145,33 +158,33 @@ const consonantsFormatted = {
 				voiceless: {
 					symbol: 'c',
 					sound: '',
-					file: '',
+					file: 'Voiceless_palatal_plosive.ogg',
 				},
 				voiced: {
 					symbol: 'ɟ',
 					sound: '',
-					file: '',
+					file: 'Voiced_palatal_plosive.ogg',
 				},
 			}, velar : {
 				voiceless: {
 					symbol: 'k',
 					sound: '',
-					file: '',
+					file: 'Voiceless_velar_plosive.ogg',
 				},
 				voiced: {
 					symbol: 'ɡ',
 					sound: '',
-					file: '',
+					file: 'Voiced_velar_plosive_02.ogg',
 				},
 			}, uvular : {
 				voiceless: {
 					symbol: 'q',
 					sound: '',
-					file: '',
+					file: 'Voiceless_uvular_plosive.ogg',
 				}, voiced: {
 					symbol: 'ɢ',
 					sound: '',
-					file: '',
+					file: 'Voiced_uvular_stop.oga',
 				},
 			},
 		}, laryngeal: {
@@ -179,14 +192,192 @@ const consonantsFormatted = {
 				voiceless: {
 					symbol: 'ʡ',
 					sound: '',
-					file: '',
+					file: 'Epiglottal_stop.ogg',
 				},
 			},
 			glottal : {
 				voiceless: {
 					symbol: 'ʔ',
 					sound: '',
+					file: 'Glottal_stop.ogg',
+				},
+			},
+		},
+	},
+	'sibilant-affricate': {
+		coronal: {
+			dental : {
+				voiceless: {
+					symbol: 't̪s̪',
+					sound: '',
+					file: 'Voiceless_dental_sibilant_affricate.oga',
+				},
+				voiced: {
+					symbol: 'd̪z̪',
+					sound: '',
+					file: 'Voiced_dental_sibilant_affricate.oga',
+				},
+			},
+			alveolar : {
+				voiceless: {
+					symbol: 'ts',
+					sound: '',
+					file: 'Voiceless_alveolar_sibilant_affricate.oga',
+				},
+				voiced: {
+					symbol: 'dz',
+					sound: '',
+					file: 'Voiced_alveolar_sibilant_affricate.oga',
+				},
+			}, 
+			postalveolar : {
+				voiceless: {
+					symbol: 't̠ʃ',
+					sound: '',
+					file: 'Voiceless_palato-alveolar_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'd̠ʒ',
+					sound: '',
+					file: 'Voiced_palato-alveolar_affricate.ogg',
+				},
+			}, 
+			retroflex : {
+				voiceless: {
+					symbol: 'ʈʂ',
+					sound: '',
+					file: 'Voiceless_retroflex_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'ɖʐ',
+					sound: '',
+					file: 'Voiced_retroflex_affricate.ogg',
+				},
+			},
+		}, dorsal: {
+			palatal : {
+				voiceless: {
+					symbol: 'tɕ',
+					sound: '',
+					file: 'Voiceless_alveolo-palatal_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'dʑ',
+					sound: '',
+					file: 'Voiced_alveolo-palatal_affricate.ogg',
+				},
+			}, 
+		},
+	},
+	'non-sibilant-affricate': {
+		labial : {
+			bilabial : {
+				voiceless: {
+					symbol: 'pɸ',
+					sound: '',
+					file: 'Voiceless_bilabial_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'bβ',
+					sound: '',
 					file: '',
+				},
+			}, labiodental : {
+				voiceless: {
+					symbol: 'p̪f',
+					sound: '',
+					file: 'Voiceless_labiodental_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'b̪v',
+					sound: '',
+					file: 'Voiced_labiodental_affricate.ogg',
+				},
+			},
+		}, 
+		coronal: {
+			dental : {
+				voiceless: {
+					symbol: 't̪θ',
+					sound: '',
+					file: 'Voiceless_dental_non-sibilant_affricate.oga',
+				},
+				voiced: {
+					symbol: 'd̪ð',
+					sound: '',
+					file: 'Voiced_dental_non-sibilant_affricate.oga',
+				},
+			}, alveolar : {
+				voiceless: {
+					symbol: 'tɹ̝̊',
+					sound: '',
+					file: '',
+				},
+				voiced: {
+					symbol: 'dɹ̝',
+					sound: '',
+					file: '',
+				},
+			},  postalveolar : {
+				voiceless: {
+					symbol: 't̠ɹ̠̊˔',
+					sound: '',
+					file: 'Voiceless_postalveolar_non-sibilant_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'd̠ɹ̠˔',
+					sound: '',
+					file: 'Voiced_postalveolar_non-sibilant_affricate.ogg',
+				},
+			},
+		}, 
+		dorsal: {
+			palatal : {
+				voiceless: {
+					symbol: 'cç',
+					sound: '',
+					file: 'Voiceless_palatal_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'ɟʝ',
+					sound: '',
+					file: 'Voiced_palatal_affricate.ogg',
+				},
+			}, velar : {
+				voiceless: {
+					symbol: 'kx',
+					sound: '',
+					file: 'Voiceless_velar_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'ɡɣ',
+					sound: '',
+					file: 'Voiced_velar_affricate.ogg',
+				},
+			}, uvular : {
+				voiceless: {
+					symbol: 'qχ',
+					sound: '',
+					file: 'Voiceless_uvular_affricate.ogg',
+				}, voiced: {
+					symbol: 'ɢʁ',
+					sound: '',
+					file: 'Voiced_uvular_affricate.ogg',
+				},
+			},
+		}, 
+		laryngeal: {
+			epiglottal : {
+				voiced: {
+					symbol: 'ʡʢ',
+					sound: '',
+					file: 'Voiced_epiglottal_affricate.ogg',
+				},
+			}, glottal : {
+				voiceless: {
+					symbol: 'ʔh',
+					sound: '',
+					file: 'Voiceless_glottal_affricate.ogg',
 				},
 			},
 		},
@@ -197,47 +388,50 @@ const consonantsFormatted = {
 				voiceless: {
 					symbol: 's',
 					sound: '',
-					file: '',
+					file: 'Voiceless_alveolar_sibilant.ogg',
 				},
 				voiced: {
 					symbol: 'z',
 					sound: '',
-					file: '',
+					file: 'Voiced_alveolar_sibilant.ogg',
 				},
-			}, postalveolar : {
+			}, 
+			postalveolar : {
 				voiceless: {
 					symbol: 'ʃ',
 					sound: '',
-					file: '',
+					file: 'Voiceless_palato-alveolar_sibilant.ogg',
 				},
 				voiced: {
 					symbol: 'ʒ',
 					sound: '',
-					file: '',
+					file: 'Voiced_palato-alveolar_sibilant.ogg',
 				},
-			}, retroflex : {
+			}, 
+			retroflex : {
 				voiceless: {
 					symbol: 'ʂ',
 					sound: '',
-					file: '',
+					file: 'Voiceless_retroflex_sibilant.ogg',
 				},
 				voiced: {
 					symbol: 'ʐ',
 					sound: '',
-					file: '',
+					file: 'Voiced_retroflex_sibilant.ogg',
 				},
 			},
-		}, dorsal: {
+		}, 
+		dorsal: {
 			palatal : {
 				voiceless: {
 					symbol: 'ɕ',
 					sound: '',
-					file: '',
+					file: 'Voiceless_alveolo-palatal_sibilant.ogg',
 				},
 				voiced: {
 					symbol: 'ʑ',
 					sound: '',
-					file: '',
+					file: 'Voiced_alveolo-palatal_sibilant.ogg',
 				},
 			}, 
 		},
@@ -248,25 +442,27 @@ const consonantsFormatted = {
 				voiceless: {
 					symbol: 'ɸ',
 					sound: '',
-					file: '',
+					file: 'Voiceless_bilabial_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'β',
 					sound: '',
-					file: '',
+					file: 'Voiced_bilabial_fricative.ogg',
 				},
-			}, labiodental : {
+			}, 
+			labiodental : {
 				voiceless: {
 					symbol: 'f',
 					sound: '',
-					file: '',
+					file: 'Voiceless_labio-dental_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'v',
 					sound: '',
-					file: '',
+					file: 'Voiced_labio-dental_fricative.ogg',
 				},
-			}, linguolabial : {
+			}, 
+			linguolabial : {
 				voiceless: {
 					symbol: 'θ̼',
 					sound: '',
@@ -277,39 +473,40 @@ const consonantsFormatted = {
 					file: '',
 				},
 			},
-		}, coronal: {
+		}, 
+		coronal: {
 			dental : {
 				voiceless: {
 					symbol: 'θ',
 					sound: '',
-					file: '',
+					file: 'Voiceless_dental_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'ð',
 					sound: '',
-					file: '',
+					file: 'Voiced_dental_fricative.ogg',
 				},
 			}, alveolar : {
 				voiceless: {
 					symbol: 'θ̠',
 					sound: '',
-					file: '',
+					file: 'Voiceless_alveolar_non-sibilant_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'ð̠',
 					sound: '',
-					file: '',
+					file: 'Voiced_alveolar_non-sibilant_fricative.ogg',
 				},
 			},  postalveolar : {
 				voiceless: {
 					symbol: 'ɹ̠̊˔',
 					sound: '',
-					file: '',
+					file: 'Voiceless_postalveolar_non-sibilant_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'ɹ̠˔',
 					sound: '',
-					file: '',
+					file: 'Voiced_postalveolar_non-sibilant_fricative.ogg',
 				},
 			}, retroflex : {
 				voiced: {
@@ -318,108 +515,140 @@ const consonantsFormatted = {
 					file: '',
 				},
 			},
-		}, dorsal: {
+		}, 
+		dorsal: {
 			palatal : {
 				voiceless: {
 					symbol: 'ç',
 					sound: '',
-					file: '',
+					file: 'Voiceless_palatal_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'ʝ',
 					sound: '',
-					file: '',
+					file: 'Voiced_palatal_fricative.ogg',
 				},
-			}, velar : {
+			}, 
+			velar : {
 				voiceless: {
 					symbol: 'x',
 					sound: '',
-					file: '',
+					file: 'Voiceless_velar_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'ɣ',
 					sound: '',
-					file: '',
+					file: 'Voiced_velar_fricative.ogg',
 				},
-			}, uvular : {
+			}, 
+			uvular : {
 				voiceless: {
 					symbol: 'χ',
 					sound: '',
-					file: '',
+					file: 'Voiceless_uvular_fricative.ogg',
 				}, voiced: {
 					symbol: 'ʁ',
 					sound: '',
-					file: '',
+					file: 'Voiced_uvular_fricative.ogg',
 				},
 			},
-		}, laryngeal: {
+		}, 
+		laryngeal: {
 			epiglottal : {
 				voiceless: {
 					symbol: 'ħ',
 					sound: '',
-					file: '',
-				}, voiced: {
+					file: 'Voiceless_pharyngeal_fricative.ogg',
+				}, 
+				voiced: {
 					symbol: 'ʕ',
 					sound: '',
-					file: '',
+					file: 'Voiced_pharyngeal_fricative.ogg',
 				},
-			}, glottal : {
+			}, 
+			glottal : {
 				voiceless: {
 					symbol: 'h',
 					sound: '',
-					file: '',
-				}, voiced: {
+					file: 'Voiceless_glottal_fricative.ogg',
+				}, 
+				voiced: {
 					symbol: 'ɦ',
 					sound: '',
-					file: '',
+					file: 'Voiced_glottal_fricative.ogg',
 				},
 			},
 		},
 	},
 	'approximant': {
 		labial : {
-			 labiodental : {
+			bilabial : {
+				voiced: {
+					symbol: 'β̞',
+					sound: '',
+					file: 'Bilabial_approximant.ogg',
+				},
+			},
+			labiodental : {
 				voiced: {
 					symbol: 'ʋ',
 					sound: '',
-					file: '',
+					file: 'Labiodental_approximant.ogg',
 				},
 			},
-		}, coronal: {
+		}, 
+		coronal: {
+			dental : {
+				voiced: {
+					symbol: 'ð̞',
+					sound: '',
+					file: 'Voiced_dental_approximant.ogg',
+				},
+			}, 
 			alveolar : {
 				voiced: {
 					symbol: 'ɹ',
 					sound: '',
-					file: '',
+					file: 'Alveolar_approximant.ogg',
 				},
-			},  retroflex : {
+			},  
+			postalveolar : {
+				voiced: {
+					symbol: 'ɹ̠',
+					sound: '',
+					file: 'Postalveolar_approximant.ogg',
+				},
+			},
+			retroflex : {
 				voiced: {
 					symbol: 'ɻ',
 					sound: '',
-					file: '',
+					file: 'Retroflex_Approximant2.oga',
 				},
 			},
-		}, dorsal: {
+		},
+		dorsal: {
 			palatal : {
 				voiced: {
 					symbol: 'j',
 					sound: '',
-					file: '',
+					file: 'Palatal_approximant.ogg',
 				},
 			}, velar : {
 				voiced: {
 					symbol: 'ɰ',
 					sound: '',
-					file: '',
+					file: 'Voiced_velar_approximant.ogg',
 				},
 			}, uvular : {
 				 voiced: {
 					symbol: 'ɰ',
 					sound: '',
-					file: '',
+					file: 'Voiced_Uvular_Approximant.ogg',
 				},
 			},
-		}, laryngeal: {
+		}, 
+		laryngeal: {
 			glottal : {
 				voiced: {
 					symbol: 'ʔ̞',
@@ -441,7 +670,7 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'ⱱ',
 					sound: '',
-					file: '',
+					file: 'Labiodental_flap.ogg',
 				},
 			}, linguolabial : {
 				voiced: {
@@ -450,7 +679,8 @@ const consonantsFormatted = {
 					file: '',
 				},
 			},
-		}, coronal: {
+		}, 
+		coronal: {
 			 alveolar : {
 				voiceless: {
 					symbol: 'ɾ̥',
@@ -460,7 +690,7 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'ɾ',
 					sound: '',
-					file: '',
+					file: 'Alveolar_tap.ogg',
 				},
 			}, retroflex : {
 				voiceless: {
@@ -474,7 +704,8 @@ const consonantsFormatted = {
 					file: '',
 				},
 			},
-		}, dorsal: {
+		}, 
+		dorsal: {
 			uvular : {
 				voiced: {
 					symbol: 'ɢ̆',
@@ -482,12 +713,13 @@ const consonantsFormatted = {
 					file: '',
 				},
 			},
-		}, laryngeal: {
+		}, 
+		laryngeal: {
 			epiglottal : {
 				voiced: {
 					symbol: 'ʡ̆',
 					sound: '',
-					file: '',
+					file: 'Epiglottal_flap.oga',
 				},
 			}, 
 		},
@@ -498,27 +730,36 @@ const consonantsFormatted = {
 				voiceless: {
 					symbol: 'ʙ̥',
 					sound: '',
-					file: '',
+					file: 'Voiceless_bilabial_trill_with_aspiration.ogg',
 				},
 				voiced: {
 					symbol: 'ʙ',
 					sound: '',
-					file: '',
+					file: 'Bilabial_trill.ogg',
 				},
 			}, 
-		}, coronal: {
+		}, 
+		coronal: {
 			alveolar : {
 				voiceless: {
 					symbol: 'r̥',
 					sound: '',
-					file: '',
+					file: 'Voiceless_alveolar_trill.ogg',
 				},
 				voiced: {
 					symbol: 'r',
 					sound: '',
-					file: '',
+					file: 'Alveolar_trill.ogg',
 				},
-			}, retroflex : {
+			},
+			postalveolar : {
+				voiced: {
+					symbol: 'r̠',
+					sound: '',
+					file: 'Voiced_postalveolar_trill.ogg',
+				},
+			}, 
+			retroflex : {
 				voiceless: {
 					symbol: 'ɽ̊r̥',
 					sound: '',
@@ -527,35 +768,89 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'ɽr',
 					sound: '',
-					file: '',
+					file: 'Voiced_retroflex_trill.ogg',
 				},
 			},
-		}, dorsal: {
+		}, 
+		dorsal: {
 			uvular : {
 				voiceless: {
 					symbol: 'ʀ̥',
 					sound: '',
-					file: '',
+					file: 'Voiceless_uvular_trill.ogg',
 				}, 
 				voiced: {
 					symbol: 'ʀ',
 					sound: '',
-					file: '',
+					file: 'Uvular_trill.ogg',
 				},
 			},
-		}, laryngeal: {
+		}, 
+		laryngeal: {
 			epiglottal : {
 				voiceless: {
 					symbol: 'ʜ',
 					sound: '',
-					file: '',
+					file: 'Voiceless_epiglottal_trill.ogg',
 				}, voiced: {
 					symbol: 'ʢ',
 					sound: '',
-					file: '',
+					file: 'Voiced_epiglottal_trill_2.ogg',
 				},
 			}, 
 		},
+	},
+	'lateral-affricate ': {
+		coronal: {
+			alveolar : {
+				voiceless: {
+					symbol: 'tɬ',
+					sound: '',
+					file: 'Voiceless_alveolar_lateral_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'dɮ',
+					sound: '',
+					file: 'Voiced_alveolar_lateral_affricate.ogg',
+				},
+			},  retroflex : {
+				voiceless: {
+					symbol: 'ʈɭ̊˔',
+					sound: '',
+					file: '',
+				},
+				voiced: {
+					symbol: 'ɖɭ˔',
+					sound: '',
+					file: '',
+				},
+			},
+		}, 
+		dorsal: {
+			palatal : {
+				voiceless: {
+					symbol: 'cʎ̝̊',
+					sound: '',
+					file: 'Voiceless_palatal_lateral_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'ɟʎ̝',
+					sound: '',
+					file: '',
+				},
+			}, velar : {
+				voiceless: {
+					symbol: 'kʟ̝̊',
+					sound: '',
+					file: 'Voiceless_velar_lateral_affricate.ogg',
+				},
+				voiced: {
+					symbol: 'ɡʟ̝',
+					sound: '',
+					file: 'Voiced_velar_lateral_affricate.ogg',
+				},
+			},
+		}, 
 	},
 	'lateral-fricative': {
 		coronal: {
@@ -563,18 +858,19 @@ const consonantsFormatted = {
 				voiceless: {
 					symbol: 'ɬ',
 					sound: '',
-					file: '',
+					file: 'Voiceless_alveolar_lateral_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'ɮ',
 					sound: '',
-					file: '',
+					file: 'Voiced_alveolar_lateral_fricative.ogg',
 				},
-			},  retroflex : {
+			},  
+			retroflex : {
 				voiceless: {
 					symbol: 'ɭ̊˔',
 					sound: '',
-					file: '',
+					file: 'Voiceless_retroflex_lateral_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'ɭ˔',
@@ -582,65 +878,83 @@ const consonantsFormatted = {
 					file: '',
 				},
 			},
-		}, dorsal: {
+		}, 
+		dorsal: {
 			palatal : {
 				voiceless: {
 					symbol: 'ʎ̝̊',
 					sound: '',
-					file: '',
+					file: 'Voiceless_palatal_lateral_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'ʎ̝',
 					sound: '',
 					file: '',
 				},
-			}, velar : {
+			}, 
+			velar : {
 				voiceless: {
 					symbol: 'ʟ̝̊',
 					sound: '',
-					file: '',
+					file: 'Voiceless_velar_lateral_fricative.ogg',
 				},
 				voiced: {
 					symbol: 'ʟ̝',
 					sound: '',
-					file: '',
+					file: 'Voiced_velar_lateral_fricative.ogg',
 				},
 			},
 		}, 
 	},
 	'lateral-approximant': {
 		coronal: {
+			dental : {
+				voiced: {
+					symbol: 'l̪',
+					sound: '',
+					file: 'Voiced_dental_lateral_approximant.ogg',
+				},
+			},
 			alveolar : {
 				voiced: {
 					symbol: 'l',
 					sound: '',
-					file: '',
+					file: 'Alveolar_lateral_approximant.ogg',
 				},
-			}, retroflex : {
+			}, 
+			postalveolar : {
+				voiced: {
+					symbol: 'l̠',
+					sound: '',
+					file: 'Voiced_postalveolar_lateral_approximant.ogg',
+				},
+			},
+			retroflex : {
 				voiced: {
 					symbol: 'ɭ',
 					sound: '',
-					file: '',
+					file: 'Retroflex_lateral_approximant.ogg',
 				},
 			},
-		}, dorsal: {
+		}, 
+		dorsal: {
 			palatal : {
 				voiced: {
 					symbol: 'ʎ',
 					sound: '',
-					file: '',
+					file: 'Palatal_lateral_approximant.ogg',
 				},
 			}, velar : {
 				voiced: {
 					symbol: 'ʟ',
 					sound: '',
-					file: '',
+					file: 'Velar_lateral_approximant.ogg',
 				},
 			}, uvular : {
 				voiced: {
 					symbol: 'ʟ̠',
 					sound: '',
-					file: '',
+					file: 'Uvular_lateral_approximant.ogg',
 				},
 			},
 		}, 
@@ -670,7 +984,8 @@ const consonantsFormatted = {
 					file: '',
 				},
 			},
-		}, dorsal: {
+		}, 
+		dorsal: {
 			palatal : {
 				voiced: {
 					symbol: 'ʎ̆ 	',
@@ -717,7 +1032,13 @@ exports.consonantsPlaces = {
 	dorsal: ['palatal', 'velar', 'uvular'],
 	laryngeal: ['epiglottal', 'glottal'],
 }
-exports.consonantsManner = ['nasal', 'plosive', 'sibilant-fricative', 'non-sibilant-fricative', 'approximant', 'tap-flap', 'trill', 'lateral-fricative', 'lateral-approximant', 'lateral-tap-flap']
+exports.consonantsManner = [
+	'nasal', 'plosive', 
+	'sibilant-affricate', 'non-sibilant-affricate', 
+	'sibilant-fricative', 'non-sibilant-fricative', 
+	'approximant', 'tap-flap', 'trill', 
+	'lateral-affricate', 'lateral-fricative', 'lateral-approximant', 'lateral-tap-flap'
+]
 
 const vowelsFormatted = {
 	'close': {
@@ -742,19 +1063,19 @@ const vowelsFormatted = {
 			rounded: {
 				symbol: 'ʉ',
 				sound: '',
-				file: '',
+				file: 'Close_central_rounded_vowel.ogg',
 			},
 		}, 
 		'back': {
 			unrounded: {
 				symbol: 'ɯ',
 				sound: '',
-				file: '',
+				file: 'Close_back_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'u',
 				sound: '',
-				file: '',
+				file: 'Close_back_rounded_vowel.ogg',
 			},
 		},
 	}, 
@@ -763,19 +1084,19 @@ const vowelsFormatted = {
 			unrounded: {
 				symbol: 'ɪ',
 				sound: '',
-				file: '',
+				file: 'Near-close_near-front_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'ʏ',
 				sound: '',
-				file: '',
+				file: 'Near-close_near-front_rounded_vowel.ogg',
 			},
 		},  
 		'back': {
 			rounded: {
 				symbol: 'ʊ',
 				sound: '',
-				file: '',
+				file: 'Near-close_near-back_rounded_vowel.ogg',
 			},
 		},
 	},
@@ -784,36 +1105,36 @@ const vowelsFormatted = {
 			unrounded: {
 				symbol: 'e',
 				sound: '',
-				file: '',
+				file: 'Close-mid_front_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'ø',
 				sound: '',
-				file: '',
+				file: 'Close-mid_front_unrounded_vowel.ogg',
 			},
 		}, 
 		'central': {
 			unrounded: {
 				symbol: 'ɘ',
 				sound: '',
-				file: '',
+				file: 'Close-mid_front_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'ɵ',
 				sound: '',
-				file: '',
+				file: 'Close-mid_front_unrounded_vowel.ogg',
 			},
 		}, 
 		'back': {
 			unrounded: {
 				symbol: 'ɤ',
 				sound: '',
-				file: '',
+				file: 'Close-mid_front_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'o',
 				sound: '',
-				file: '',
+				file: 'Close-mid_front_unrounded_vowel.ogg',
 			},
 		},
 	},
@@ -822,19 +1143,19 @@ const vowelsFormatted = {
 			unrounded: {
 				symbol: 'e̞',
 				sound: '',
-				file: '',
+				file: 'Mid_front_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'ø̞',
 				sound: '',
-				file: '',
+				file: 'Mid_front_rounded_vowel.ogg',
 			},
 		}, 
 		'central': {
 			unrounded: {
 				symbol: 'ə',
 				sound: '',
-				file: '',
+				file: 'Mid-central_vowel.ogg',
 			},
 		}, 
 		'back': {
@@ -846,7 +1167,7 @@ const vowelsFormatted = {
 			rounded: {
 				symbol: 'o̞',
 				sound: '',
-				file: '',
+				file: 'Mid_back_rounded_vowel.ogg',
 			},
 		},
 	},
@@ -855,36 +1176,36 @@ const vowelsFormatted = {
 			unrounded: {
 				symbol: 'ɛ',
 				sound: '',
-				file: '',
+				file: 'Open-mid_front_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'œ',
 				sound: '',
-				file: '',
+				file: 'Open-mid_front_rounded_vowel.ogg',
 			},
 		}, 
 		'central': {
 			unrounded: {
 				symbol: 'ɜ',
 				sound: '',
-				file: '',
+				file: 'Open-mid_central_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'ɞ',
 				sound: '',
-				file: '',
+				file: 'Open-mid_central_rounded_vowel.ogg',
 			},
 		}, 
 		'back': {
 			unrounded: {
 				symbol: 'ʌ',
 				sound: '',
-				file: '',
+				file: 'PR-open-mid_back_unrounded_vowel2.ogg',
 			},
 			rounded: {
 				symbol: 'ɔ',
 				sound: '',
-				file: '',
+				file: 'PR-open-mid_back_rounded_vowel.ogg',
 			},
 		},
 	},
@@ -893,14 +1214,14 @@ const vowelsFormatted = {
 			unrounded: {
 				symbol: 'æ',
 				sound: '',
-				file: '',
+				file: 'Near-open_front_unrounded_vowel.ogg',
 			},
 		}, 
 		'central': {
 			unrounded: {
 				symbol: 'ɐ',
 				sound: '',
-				file: '',
+				file: 'Near-open_central_unrounded_vowel.ogg',
 			},
 		}, 
 	},
@@ -909,38 +1230,38 @@ const vowelsFormatted = {
 			unrounded: {
 				symbol: 'a',
 				sound: '',
-				file: '',
+				file: 'PR-open_front_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'ɶ',
 				sound: '',
-				file: '',
+				file: 'Open_front_rounded_vowel.ogg',
 			},
 		}, 
 		'central': {
 			unrounded: {
 				symbol: 'ä',
 				sound: '',
-				file: '',
+				file: 'Open_central_unrounded_vowel.ogg',
 			},
 		}, 
 		'back': {
 			unrounded: {
 				symbol: 'ɑ',
 				sound: '',
-				file: '',
+				file: 'Open_back_unrounded_vowel.ogg',
 			},
 			rounded: {
 				symbol: 'ɒ',
 				sound: '',
-				file: '',
+				file: 'PR-open_back_rounded_vowel.ogg',
 			},
 		},
 	},
 }
 exports.vowelsFormatted = vowelsFormatted
 exports.vowels = Object.values(
-	Object.entries(vowelsFormatted).reduce( (vowels, [manner, places]) => 
+	Object.entries(vowelsFormatted).reduce( (vowels1, [manner, places]) => 
 		Object.entries(places).reduce( (vowels2, [place, rounds]) => 
 			Object.entries(rounds).reduce( (vowels3, [round, {symbol, sound, file}]) => 
 				({
@@ -956,7 +1277,7 @@ exports.vowels = Object.values(
 					}
 				})
 			, {...vowels2})
-		,{...vowels})
+		,{...vowels1})
 	, {})
 )
 exports.vowelsPlaces = ['front', 'central', 'back']

@@ -191,6 +191,28 @@ const IPA = (props) => {
 		</div>
 	}
 	
+	const IPACell = ({letter, appliedMaps}) => {
+		const text = letter 
+				? letter.symbol 
+				: ''
+		
+		const bgColor = letter 
+			? blendAllColors(Object.values(appliedMaps)
+				.reduce( (colors, {color, map}) => 
+					map.includes(text)
+						? [...colors, color]
+						: colors
+				, []))
+			: '#eee' 
+		const styles = {background: bgColor}
+		
+		return (
+			<td style={styles} >
+				{text}
+			</td>
+		)
+	}
+	
 	return (<>
 		<TableHeaderAndOptions type="consonants" />
 		<table className="wikitable nowrap">
@@ -222,26 +244,10 @@ const IPA = (props) => {
 								['voiceless', 'voiced'].map(voice => {
 									let letter = consonants.filter( c => (manner === c.manner && place === c.place && subPlace === c.subPlace && voice === c.voice ) )
 									if(letter) letter = letter[0]
-									
-									const text = letter 
-										? letter.symbol 
-										: ''
-									
-									const bgColor = letter 
-										? blendAllColors(Object.values(appliedConsonantMaps)
-											.reduce( (colors, {color, map}) => 
-												map.includes(text)
-													? [...colors, color]
-													: colors
-											, []))
-										: '#eee' 
-									const styles = {background: bgColor}
-									
-									return (
-										<td key={place+subPlace+manner+voice} style={styles} >
-											{text}
-										</td>
-									)
+									return <IPACell 
+										letter={letter} 
+										appliedMaps={appliedConsonantMaps}
+										key={place+subPlace+manner+voice} />
 								})
 							)
 						)}
@@ -269,26 +275,10 @@ const IPA = (props) => {
 							['unrounded', 'rounded'].map(round => {
 								let letter = vowels.filter( c => (manner === c.manner && place === c.place && round === c.round ) )
 								if(letter) letter = letter[0]
-								
-								const text = letter 
-										? letter.symbol 
-										: ''
-								
-								const bgColor = letter 
-									? blendAllColors(Object.values(appliedVowelsMaps)
-										.reduce( (colors, {color, map}) => 
-											map.includes(text)
-												? [...colors, color]
-												: colors
-										, []))
-									: '#eee' 
-								const styles = {background: bgColor}
-								
-								return (
-									<td key={place+manner+round} style={styles} >
-										{text}
-									</td>
-								)
+								return <IPACell 
+								letter={letter} 
+								appliedMaps={appliedVowelsMaps}
+								key={place+manner+round} />
 							})
 						)}
 					</tr>
