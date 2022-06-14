@@ -83,3 +83,7 @@ a {
 .wikitable > tr > td:nth-child(2n+2), .wikitable > * > tr > td:nth-child(2n+2) {
   border-right: none;
 }
+
+.dictionary {
+	font-family: 'Gentium Basic', serif;
+}

@@ -6,26 +6,85 @@ const consonantsFormatted = {
 					symbol: 'm̥',
 					sound: '',
 					file: '',
+					occurrence: {
+						french: {
+							word: 'prisme',
+							wordFormatted: 'pris<b>m</b>e',
+							IPA: '[pχis̪m̥]',
+							meaning: 'prism',
+						},
+					}
 				},
 				voiced: {
 					symbol: 'm',
 					sound: '',
 					file: 'Bilabial_nasal.ogg',
+					varieties: {
+						plain : 'm',
+						palatalised: 'mʲ',
+						velarised: 'mˠ', 	
+						pharyngealized: 'mˤ', 	
+					},
+					occurrence: {
+						english: {
+							word: 'him',
+							wordFormatted: 'hi<b>m</b>',
+							IPA: '[hɪm]',
+							meaning: 'him',
+						},
+						spanish: {
+							word: 'grumete',
+							wordFormatted: 'gru<b>m</b>ete',
+							IPA: '[ɡɾuˈme̞te̞]',
+							meaning: 'cabin boy',
+						},
+						french: {
+							word: 'manger',
+							wordFormatted: '<b>m</b>anger',
+							IPA: '[mɑ̃ʒe]',
+							meaning: 'to eat',
+						},
+						japanese: {
+							word: '乾杯 / kampai',
+							wordFormatted: '乾杯 / ka<b>m</b>pai',
+							IPA: '[kampai]',
+							meaning: 'cheers',
+						},
+					},
 				},
-			}, labiodental : {
+			}, 
+			labiodental : {
 				voiced: {
 					symbol: 'ɱ',
+					alternatives: ['m̪'],
 					sound: '',
 					file: 'Labiodental_nasal.ogg',
+					occurrence: {
+						english: {
+							word: 'symphony',
+							wordFormatted: 'sy<b>m</b>phony',
+							IPA: '[ˈsɪɱfəni]',
+							meaning: 'symphony',
+						},
+						spanish: {
+							word: 'influir',
+							wordFormatted: 'i<b>n</b>fluir',
+							IPA: ' 	[iɱfluˈiɾ]',
+							meaning: 'to have influence',
+						},
+					},
 				},
-			}, linguolabial : {
+			}, 
+			linguolabial : {
 				voiced: {
 					symbol: 'n̼',
+					alternatives: ['m̺'],
 					sound: '',
 					file: 'Linguolabial_nasal.ogg',
 				},
 			},
-		}, coronal: {
+		}, 
+		coronal: {
 			alveolar : {
 				voiceless: {
 					symbol: 'n̥',
@@ -36,8 +95,35 @@ const consonantsFormatted = {
 					symbol: 'n',
 					sound: '',
 					file: 'Alveolar_nasal.ogg',
+					occurrence: {
+						english: {
+							word: ' 	nice',
+							wordFormatted: '<b>n</b>ice',
+							IPA: '[naɪs]',
+							meaning: 'nice',
+						},
+						french: {
+							word: 'connexion',
+							wordFormatted: 'co<b>nn</b>exion',
+							IPA: '[kɔn̻ɛksjɔ̃]',
+							meaning: 'connection',
+						},
+						japanese: {
+							word: '反対 / hantai',
+							wordFormatted: '反対 / ha<b>n</b>tai',
+							IPA: '[hantai]',
+							meaning: 'opposite',
+						},
+						spanish: {
+							word: 'nada',
+							wordFormatted: '<b>n</b>nada',
+							IPA: ' 	[ˈnäð̞ä]',
+							meaning: 'nothing',
+						},
+					},
 				},
-			},retroflex : {
+			},
+			retroflex : {
 				voiceless: {
 					symbol: 'ɳ̊',
 					sound: '',
@@ -49,7 +135,8 @@ const consonantsFormatted = {
 					file: 'Retroflex_nasal.ogg',
 				},
 			},
-		}, dorsal: {
+		}, 
+		dorsal: {
 			palatal : {
 				voiceless: {
 					symbol: 'ɲ̊',
@@ -59,9 +146,10 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'ɲ',
 					sound: '',
-					file: 'Palatal_nasal.ogg',
+					file: '',
 				},
-			}, velar : {
+			}, 
+			velar : {
 				voiceless: {
 					symbol: 'ŋ̊',
 					sound: '',
@@ -70,13 +158,14 @@ const consonantsFormatted = {
 				voiced: {
 					symbol: 'ŋ',
 					sound: '',
-					file: 'Velar_nasal.ogg',
+					file: '',
 				},
-			}, velar : {
+			},
+			uvular : {
 				voiced: {
 					symbol: 'ɴ',
 					sound: '',
-					file: 'Uvular_nasal.ogg',
+					file: '',
 				},
 			},
 		}, 
@@ -634,13 +723,16 @@ const consonantsFormatted = {
 					sound: '',
 					file: 'Palatal_approximant.ogg',
 				},
-			}, velar : {
+			}, 
+			velar : {
 				voiced: {
 					symbol: 'ɰ',
+					alternatives: 'w',
 					sound: '',
 					file: 'Voiced_velar_approximant.ogg',
 				},
-			}, uvular : {
+			}, 
+			uvular : {
 				 voiced: {
 					symbol: 'ɰ',
 					sound: '',
@@ -1027,7 +1119,7 @@ exports.consonants = Object.values(
 	, {})
 )
 exports.consonantsPlaces = {
-	labial: ['bilabial', 'Labiodental','linguolabial'],
+	labial: ['bilabial', 'labiodental','linguolabial'],
 	coronal: ['dental', 'alveolar', 'postalveolar', 'retroflex'],
 	dorsal: ['palatal', 'velar', 'uvular'],
 	laryngeal: ['epiglottal', 'glottal'],
@@ -1284,7 +1376,7 @@ exports.vowelsPlaces = ['front', 'central', 'back']
 exports.vowelsManner = ['close', 'near-close', 'close-mid', 'mid', 'open-mid', 'near-open', 'open']
 
 
-const englishConsonants = ['m', 'n', 'ŋ', 'p', 'b', 't', 'd', 'k', 'ɡ', 'tʃ', 'dʒ', 'f', 'v', 'θ', 'ð', 's', 'z', 'ʃ', 'ʒ', 'h', 'l', 'ɹ', 'j', 'w']
+const englishConsonants = ['m', 'n', 'ŋ', 'p', 'b', 't', 'd', 'k', 'ɡ', 't̠ʃ', 'd̠ʒ', 'f', 'v', 'θ', 'ð', 's', 'z', 'ʃ', 'ʒ', 'h', 'l', 'ɹ', 'j', 'ɰ']
 const englishVowels = ['i','iː','ɪ','e', 'ɛ', 'æ', 'ɑː', 'ɑ', 'ɒ', 'ɔ', 'ɑ', 'ɔː', 'uː', 'u', 'ʊ', 'ʌ', 'ɜː', 'ɜɹ', 'ə',]
 
 const frenchConsonants = ['m', 'n', 'ɲ', 'ŋ', 'p', 't', 'k', 'b', 'd', 'ɡ', 'f', 's', 'ʃ', 'ʁ', 'v', 'z', 'ʒ', 'l', 'j', 'ɥ', 'w']
