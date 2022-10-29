@@ -8,7 +8,7 @@ const path = require("node:path");
 require("dotenv").config();
 
 // get routers
-const project = require(__dirname + "/routes/project.js");
+const project = require("./routes/project.js");
 //
 const character = require(__dirname + "/routes/character.js");
 const organization = require(__dirname + "/routes/organization.js");
@@ -47,19 +47,19 @@ db.once("open", function () {
 
 // include the routers for each sub page
 app.use("/project", project);
-//
-app.use("/character", character);
-app.use("/organization", organization);
-app.use("/culture", culture);
-app.use("/artifact", artifact);
-//
-app.use("/magic", magic);
-app.use("/language", language);
-app.use("/location", location);
-app.use("/atlas", atlas);
-app.use("/timeline", timeline);
-//
-app.use("/profile", profile);
+// //
+// app.use("/character", character);
+// app.use("/organization", organization);
+// app.use("/culture", culture);
+// app.use("/artifact", artifact);
+// //
+// app.use("/magic", magic);
+// app.use("/language", language);
+// app.use("/location", location);
+// app.use("/atlas", atlas);
+// app.use("/timeline", timeline);
+// //
+// app.use("/profile", profile);
 
 // listen
 app.listen(3000, () => {
