@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const characterSchema = new Schema({
+const languageSchema = new Schema({
 	_id: Number,
 	_project_id: Number,
 	name: { type: String, required: true },
 });
 
-const Character = mongoose.model("Character", characterSchema);
+const Language = mongoose.model("Language", languageSchema);
 
-module.exports = { Character, characterSchema };
+module.exports = { Language, languageSchema };

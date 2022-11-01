@@ -7,22 +7,25 @@ const cors = require("cors");
 const path = require("node:path");
 require("dotenv").config();
 
-// get routers
-const project = require("./routes/project.js");
-//
-const character = require(__dirname + "/routes/character.js");
-const organization = require(__dirname + "/routes/organization.js");
-const culture = require(__dirname + "/routes/culture.js");
-const artifact = require(__dirname + "/routes/artifact.js");
-//
-const magic = require(__dirname + "/routes/magic.js");
-const language = require(__dirname + "/routes/language.js");
-const location = require(__dirname + "/routes/location.js");
-const atlas = require(__dirname + "/routes/atlas.js");
-const timeline = require(__dirname + "/routes/timeline.js");
-//
-const profile = require(__dirname + "/routes/profile.js");
-//
+// get models
+const { getRoutes } = require("./routes/routeHelper");
+const { Artifact } = require("./models/artifact.model.js");
+const { Character } = require("./models/character.model");
+const { CharacterArc } = require("./models/characterArc.model.js");
+const { Culture } = require("./models/culture.model");
+const { Language } = require("./models/language.model.js");
+const { Location } = require("./models/location.model");
+const { MagicSystem } = require("./models/magicSystem.model.js");
+const { Manuscript } = require("./models/manuscript.model");
+const { Map } = require("./models/map.model.js");
+const { Organization } = require("./models/organization.model");
+const { Plot } = require("./models/plot.model");
+const { Profile } = require("./models/profile.model.js");
+const { Project } = require("./models/project.model");
+const { Relationship } = require("./models/relationship.model");
+const { Religion } = require("./models/religion.model");
+const { Theme } = require("./models/theme.model.js");
+const { Timeline } = require("./models/timeline.model");
 
 // app
 const app = express();
@@ -42,24 +45,35 @@ mongoose.connect(mongooseDB);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
-	console.log("Connected successfully");
+	// console.log("Connected successfully");
 });
 
-// include the routers for each sub page
-app.use("/project", project);
-// //
-// app.use("/character", character);
-// app.use("/organization", organization);
-// app.use("/culture", culture);
-// app.use("/artifact", artifact);
-// //
-// app.use("/magic", magic);
-// app.use("/language", language);
-// app.use("/location", location);
-// app.use("/atlas", atlas);
-// app.use("/timeline", timeline);
-// //
-// app.use("/profile", profile);
+// get all object routes
+[
+	["/artifact", Artifact],
+	["/character", Character],
+	["/characterArc", CharacterArc],
+	["/culture", Culture],
+	["/language", Language],
+	["/location", Location],
+	["/magicSystem", MagicSystem],
+	["/manuscript", Manuscript],
+	["/map", Map],
+	["/organization", Organization],
+	["/plot", Plot],
+	["/profile", Profile],
+	["/project", Project],
+	["/relationship", Relationship],
+	["/religion", Religion],
+	["/theme", Theme],
+	["/timeline", Timeline],
+].forEach(([uri, model]) => {
+	// get routes
+	const subRouter = getRoutes(uri, model);
+
+	// use route
+	app.use(uri, subRouter);
+});
 
 // listen
 app.listen(3000, () => {
